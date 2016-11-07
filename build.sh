@@ -5,4 +5,4 @@ else
   echo "Build folder does not exist, ignoring..."
 fi
 echo "Building mod..."
-gradle build
+./gradlew build
