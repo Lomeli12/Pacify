@@ -1,0 +1,11 @@
+[
+{
+  "modid": "pacify",
+  "name": "Pacify",
+  "description": "A simple mod to disable a player's ability to hurt anyone.",
+  "version" : "${version}",
+  "mcversion": "${mcversion}",
+  "url": "http://www.lomeli12.net/",
+  "authorList": ["Lomeli12"]
+}
+]

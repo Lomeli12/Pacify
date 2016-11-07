@@ -1,0 +1,12 @@
+command.pacify.base.usage=/%s <options>
+command.pacify.sub.usage=/%s %s <Player Names>
+command.pacify.invalid_player=%s does not exists!
+command.pacify.not_player=You're not a player!
+command.pacify.followups=, %s
+
+command.pacify.add.one=Pacified %s
+command.pacify.add.already=%s already pacified!
+command.pacify.remove.one=Rearmed %s
+command.pacify.remove.already=%s isn't pacified!
+command.pacify.status.true=%s is pacified.
+command.pacify.status.false=%s can cause harm.
