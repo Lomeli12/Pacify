@@ -7,7 +7,6 @@ import java.util.List;
 
 import net.lomeli.pacify.Pacify;
 
-import net.minecraft.client.resources.I18n;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
@@ -15,6 +14,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.translation.I18n;
 
 public class CommandAdd extends CommandBase {
     @Override
@@ -45,7 +45,7 @@ public class CommandAdd extends CommandBase {
             StringBuilder out = new StringBuilder();
             for (int i = 0; i < playerList.size(); i++) {
                 EntityPlayerMP player = playerList.get(i);
-                out.append(I18n.format(i == 0 ? "command.pacify.add.one" : "command.pacify.followups", player.getName()));
+                out.append(I18n.translateToLocalFormatted(i == 0 ? "command.pacify.add.one" : "command.pacify.followups", player.getName()));
                 Pacify.setPacifiedState(player, true);
             }
             sender.addChatMessage(new TextComponentString(out.toString()));
@@ -59,7 +59,7 @@ public class CommandAdd extends CommandBase {
 
     @Override
     public String getCommandUsage(ICommandSender sender) {
-        return I18n.format("command.pacify.sub.usage", Pacify.MOD_ID, getCommandName());
+        return I18n.translateToLocalFormatted("command.pacify.sub.usage", Pacify.MOD_ID, getCommandName());
     }
 
     @Override

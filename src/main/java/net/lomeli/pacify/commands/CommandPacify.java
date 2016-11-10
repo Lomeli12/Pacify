@@ -7,13 +7,13 @@ import java.util.List;
 
 import net.lomeli.pacify.Pacify;
 
-import net.minecraft.client.resources.I18n;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.translation.I18n;
 
 public class CommandPacify extends CommandBase {
     List<String> commandNames;
@@ -25,6 +25,7 @@ public class CommandPacify extends CommandBase {
         modCommands = Lists.newArrayList();
         modCommands.add(new CommandAdd());
         modCommands.add(new CommandRemove());
+        modCommands.add(new CommandStatus());
         for (CommandBase cmd : modCommands)
             commandNames.add(cmd.getCommandName());
     }
@@ -79,6 +80,6 @@ public class CommandPacify extends CommandBase {
 
     @Override
     public String getCommandUsage(ICommandSender sender) {
-        return I18n.format("command.pacify.base.usage", getCommandName());
+        return I18n.translateToLocalFormatted("command.pacify.base.usage", getCommandName());
     }
 }
